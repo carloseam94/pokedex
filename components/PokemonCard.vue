@@ -1,32 +1,42 @@
 <template>
-    <div class="card mb-4" style="border-radius: .75rem;">
+  <div class="card mb-4" style="border-radius: 0.75rem">
+    <a :href="'/pokemon/' + pokemon.name">
+      <img
+        class="card-img-top"
+        :src="pokemonData.sprites.front_default"
+        :alt="'sprite_' + pokemon.name"
+      />
+    </a>
+    <div class="card-body">
       <a :href="'/pokemon/' + pokemon.name">
-        <img class="card-img-top" :src="pokemonData.sprites.front_default" :alt="'sprite_' + pokemon.name" />
+        <h2 class="card-title text-capitalize d-inline-block">
+          {{ pokemonData.name }}
+        </h2>
       </a>
-      <div class="card-body">
-        <a :href="'/pokemon/' + pokemon.name">
-          <h2 class="card-title text-capitalize d-inline-block">{{ pokemonData.name }}</h2>
-        </a>
-        <div>
-          <span>
-            <img
-              :src="'images/types/' + pokemonData.types[0].type.name + '.png'"
-              width="32"
-              alt="type 1"
-            />
-            <h5 class="d-inline-block text-capitalize">{{ pokemonData.types[0].type.name }}</h5>
-          </span>
-          <span v-if="pokemonData.types.length > 1" class="ms-2">
-            <img
-              :src="'images/types/' + pokemonData.types[1].type.name + '.png'"
-              width="32"
-              alt="type 2"
-            />
-            <h5 class="d-inline-block text-capitalize">{{ pokemonData.types[1].type.name }}</h5>
-          </span>
-        </div>
+      <div>
+        <span>
+          <img
+            :src="'images/types/' + pokemonData.types[0].type.name + '.png'"
+            width="32"
+            alt="type 1"
+          />
+          <h5 class="d-inline-block text-capitalize">
+            {{ pokemonData.types[0].type.name }}
+          </h5>
+        </span>
+        <span v-if="pokemonData.types.length > 1" class="ms-2">
+          <img
+            :src="'images/types/' + pokemonData.types[1].type.name + '.png'"
+            width="32"
+            alt="type 2"
+          />
+          <h5 class="d-inline-block text-capitalize">
+            {{ pokemonData.types[1].type.name }}
+          </h5>
+        </span>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -41,9 +51,9 @@ export default {
         name: this.pokemon.name,
         types: [
           { type: { name: "normal", url: "" } },
-          { type: { name: "normal", url: "" } }
-        ]
-      }
+          { type: { name: "normal", url: "" } },
+        ],
+      },
     };
   },
   created() {
@@ -53,14 +63,69 @@ export default {
     fetchData() {
       axios
         .get("https://pokeapi.co/api/v2/pokemon/" + this.pokemon.name)
-        .then(response => {
+        .then((response) => {
           this.pokemonData = response.data;
         })
-        .catch(error => {});
-    }
-  }
+        .catch((error) => {});
+    },
+  },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+$dark-mode: #163c5b;
+$sepia-mode: #f1e7d0;
+
+.card:hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-5px) !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+a h2 {
+  color: #212529;
+  transition: all 0.2s ease-in-out;
+}
+
+a h2:hover {
+    color: rgba(33, 37, 41, .7);
+}
+
+.dark-mode .card {
+  background-color: $dark-mode;
+  color: #ebf4f1;
+  border-color: #888d8c;
+}
+
+.dark-mode .card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(223, 213, 213, 0.15) !important;
+}
+
+.dark-mode a h2 {
+  color: #ebf4f1;
+}
+
+.sepia-mode a h2 {
+  color: #433422;
+}
+
+.dark-mode a h2:hover {
+    color: rgba(235, 244, 241, .7);
+}
+
+.sepia-mode a h2:hover {
+  color: rgba(67, 52, 34,.7);
+}
+
+.sepia-mode .card {
+  background-color: $sepia-mode;
+  color: #433422;
+}
 </style>
