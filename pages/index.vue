@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Pokemons</h1>
+    <h1>Pokemon</h1>
     <button @click="fetchData" class="btn btn-primary">Fetch Data</button>
     <pre>{{ pokemon }}</pre>
   </div>
