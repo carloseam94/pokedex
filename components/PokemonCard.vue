@@ -1,8 +1,11 @@
 <template>
   <div class="card mb-4" style="border-radius: 0.75rem">
+    <a :href="'/pokemon/' + pokemon.name">
+        <img class="card-img-top" :src="pokemonData.sprites.other['official-artwork'].front_default" :alt="'sprite_' + pokemon.name" />
+      </a>
     <div class="card-body">
       <a :href="'/pokemon/' + pokemon.name">
-        <img class="card-img-top" :src="pokemonData.sprites.other['official-artwork'].front_default" :alt="'sprite_' + pokemon.name" />
+      <h4 class="card-title text-capitalize d-inline-block">{{ pokemon.name}}</h4>
       </a>
       <div>
         <span>
@@ -10,6 +13,7 @@
             :src="'images/types/' + pokemonData.types[0].type.name + '.png'"
             width="32"
             alt="type 1"
+            class="rounded-circle"
           />
           <h5 class="d-inline-block text-capitalize">
             {{ pokemonData.types[0].type.name }}
@@ -20,6 +24,7 @@
             :src="'images/types/' + pokemonData.types[1].type.name + '.png'"
             width="32"
             alt="type 2"
+            class="rounded-circle"
           />
           <h5 class="d-inline-block text-capitalize">
             {{ pokemonData.types[1].type.name }}
@@ -87,12 +92,12 @@ a {
   text-decoration: none;
 }
 
-a h2 {
+a h4 {
   color: #212529;
   transition: all 0.2s ease-in-out;
 }
 
-a h2:hover {
+a h4:hover {
     color: rgba(33, 37, 41, .7);
 }
 
@@ -106,19 +111,19 @@ a h2:hover {
   box-shadow: 0 0.5rem 1rem rgba(223, 213, 213, 0.15) !important;
 }
 
-.dark-mode a h2 {
+.dark-mode a h4 {
   color: #ebf4f1;
 }
 
-.sepia-mode a h2 {
+.sepia-mode a h4 {
   color: #433422;
 }
 
-.dark-mode a h2:hover {
+.dark-mode a h4:hover {
     color: rgba(235, 244, 241, .7);
 }
 
-.sepia-mode a h2:hover {
+.sepia-mode a h4:hover {
   color: rgba(67, 52, 34,.7);
 }
 

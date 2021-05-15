@@ -53,5 +53,10 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+header {
+    margin-bottom: 7rem;
+}
+
 </style>
