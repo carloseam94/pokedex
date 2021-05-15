@@ -1,12 +1,5 @@
 <template>
   <div class="card mb-4" style="border-radius: 0.75rem">
-    <a :href="'/pokemon/' + pokemon.name">
-      <img
-        class="card-img-top"
-        :src="pokemonData.sprites.front_default"
-        :alt="'sprite_' + pokemon.name"
-      />
-    </a>
     <div class="card-body">
       <a :href="'/pokemon/' + pokemon.name">
         <img class="card-img-top" :src="pokemonData.sprites.other['official-artwork'].front_default" :alt="'sprite_' + pokemon.name" />
