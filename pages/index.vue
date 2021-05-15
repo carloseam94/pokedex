@@ -13,7 +13,7 @@
         <button @click="previous($event)" :disabled="!pokemons.previous" class="btn btn-dark"><i class="fa fa-arrow-left me-2"></i>Previous</button>
         <input type="number" step="1" min="1" max="38" v-model="page" @keydown="keydownInputPgae($event)" id="input_page" class="ms-2 form-control d-inline-block" style="width: 70px">
         <button class="me-2 btn btn-dark" @click="goToPage(page)">Go</button>
-        <button @click="next($event)" :disabled="!pokemons.next" class="btn btn-dark">Next<i class="fa fa-arrow-right ms-4"></i></button>
+        <button @click="next($event)" :disabled="!pokemons.next" class="btn btn-dark">Next<i class="fa fa-arrow-right ms-2"></i></button>
       </div>
     </div>
   </div>

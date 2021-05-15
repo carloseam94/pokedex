@@ -9,9 +9,7 @@
     </a>
     <div class="card-body">
       <a :href="'/pokemon/' + pokemon.name">
-        <h2 class="card-title text-capitalize d-inline-block">
-          {{ pokemonData.name }}
-        </h2>
+        <img class="card-img-top" :src="pokemonData.sprites.other['official-artwork'].front_default" :alt="'sprite_' + pokemon.name" />
       </a>
       <div>
         <span>
@@ -47,7 +45,14 @@ export default {
   data() {
     return {
       pokemonData: {
-        sprites: { front_default: "" },
+        sprites: { 
+          front_default: "",
+          other: {
+            'official-artwork': {
+              front_default: ""
+            }
+          }
+        },
         name: this.pokemon.name,
         types: [
           { type: { name: "normal", url: "" } },
