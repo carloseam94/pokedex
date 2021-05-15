@@ -46,8 +46,8 @@
       <span class="text-danger mx-1">
         <i class="fa fa-heart"></i>
       </span> by
-      <a class="link-light" href="https://github.com/vplasencia">Vivian</a> and
-      <a class="link-light" href="https://github.com/carloseam94">Carlos</a>
+      <a class="link-light" style="text-decoration: underline" href="https://github.com/vplasencia">Vivian</a> and
+      <a class="link-light" style="text-decoration: underline" href="https://github.com/carloseam94">Carlos</a>
     </h6>
       </div>
     </footer>
@@ -55,4 +55,27 @@
 </template>
 
 <style>
+
+.card:hover {
+  transition: all .2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-5px) !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+a h2 {
+  color: #212529;
+  transition: all .2s ease-in-out;
+}
+
+a h2:hover {
+  color: #6c757d;
+}
+
 </style>
