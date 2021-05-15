@@ -1,15 +1,17 @@
 <template>
-  <p>{{ data }}</p>
+  <p>{{ pokemon.name }}</p>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   created() {
+    console.log("params", this.$route.params.pokemon)
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${params.pokemon}`)
+      .get("https://pokeapi.co/api/v2/pokemon/" + this.$route.params.pokemon)
       .then((response) => {
         // handle success
-        console.log(response.data);
+        // console.log(response.data);
         this.pokemon = response.data;
       })
       .catch((error) => {
@@ -20,6 +22,7 @@ export default {
   data() {
     return {
       data: "",
+      pokemon: {}
     };
   },
 };
