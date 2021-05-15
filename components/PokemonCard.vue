@@ -1,10 +1,12 @@
 <template>
     <div class="card mb-4" style="border-radius: .75rem;">
       <a :href="'/pokemon/' + pokemon.name">
-        <img class="card-img-top" :src="pokemonData.sprites.front_default" alt="front default" />
+        <img class="card-img-top" :src="pokemonData.sprites.front_default" :alt="'sprite_' + pokemon.name" />
       </a>
       <div class="card-body">
-        <h2 class="card-title text-capitalize">{{ pokemonData.name }}</h2>
+        <a :href="'/pokemon/' + pokemon.name">
+          <h2 class="card-title text-capitalize d-inline-block">{{ pokemonData.name }}</h2>
+        </a>
         <div>
           <span>
             <img
@@ -53,7 +55,6 @@ export default {
         .get("https://pokeapi.co/api/v2/pokemon/" + this.pokemon.name)
         .then(response => {
           this.pokemonData = response.data;
-          console.log(this.pokemonData);
         })
         .catch(error => {});
     }
