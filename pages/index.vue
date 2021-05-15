@@ -24,6 +24,10 @@ import PokemonCard from "../components/PokemonCard";
 import axios from "axios";
 
 export default {
+
+  mounted() {
+    this.fetchData();
+  },
   data() {
     return {
       pokemons: [],
