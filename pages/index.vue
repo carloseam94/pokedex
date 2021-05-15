@@ -1,8 +1,9 @@
 <template>
   <div>
     <h1>Pokemons</h1>
-    <button @click="fetchData" class="btn btn-primary">Fetch Data</button>
-    <pre>{{ pokemon }}</pre>
+    <a :href="pokemon.results.name">Pokemon</a>
+    <!-- <button @click="fetchData" class="btn btn-primary">Fetch Data</button> -->
+    <!-- <pre>{{ pokemon.results[0].name }}</pre> -->
   </div>
 </template>
 
@@ -10,15 +11,19 @@
 import axios from "axios";
 
 export default {
+
+  mounted() {
+    this.fetchData();
+  },
   data() {
     return {
-      pokemon: {},
+      pokemon: [],
     };
   },
   methods: {
     fetchData() {
       axios
-        .get("https://pokeapi.co/api/v2/pokemon/ditto")
+        .get("https://pokeapi.co/api/v2/pokemon")
         .then((response) => {
           // handle success
           console.log(response.data);
