@@ -1,7 +1,7 @@
 <template>
     <div class="card mb-4" style="border-radius: .75rem;">
       <a :href="'/pokemon/' + pokemon.name">
-        <img class="card-img-top" :src="pokemonData.sprites.front_default" :alt="'sprite_' + pokemon.name" />
+        <img class="card-img-top" :src="pokemonData.sprites.other['official-artwork'].front_default" :alt="'sprite_' + pokemon.name" />
       </a>
       <div class="card-body">
         <a :href="'/pokemon/' + pokemon.name">
@@ -37,7 +37,14 @@ export default {
   data() {
     return {
       pokemonData: {
-        sprites: { front_default: "" },
+        sprites: { 
+          front_default: "",
+          other: {
+            'official-artwork': {
+              front_default: ""
+            }
+          }
+        },
         name: this.pokemon.name,
         types: [
           { type: { name: "normal", url: "" } },

@@ -6,6 +6,11 @@
       </div>
     </div>
     <div class="row">
+      <div class="col text-center">
+        <img :src="pokemon.sprites.other['official-artwork'].front_default" alt="official_artwork">
+      </div>
+    </div>
+    <div class="row">
       <div class="col">
         <img :src="pokemon.sprites.back_default" alt="back_default">
       </div>
@@ -51,7 +56,12 @@ export default {
           back_default: "",
           back_female: "",
           back_shiny: "",
-          back_shiny_female: ""
+          back_shiny_female: "",
+          other: {
+            'official-artwork': {
+              front_default: ""
+            }
+          }
         },
         name: "",
         types: [
