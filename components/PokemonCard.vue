@@ -102,19 +102,6 @@ $sepia-mode: #f1e7d0;
   transform: translateY(-5px) !important;
 }
 
-a {
-  text-decoration: none;
-}
-
-a h4 {
-  color: #212529;
-  transition: all 0.2s ease-in-out;
-}
-
-a h4:hover {
-    color: rgba(33, 37, 41, .7);
-}
-
 .dark-mode .card {
   background-color: $dark-mode;
   color: #ebf4f1;
@@ -125,28 +112,10 @@ a h4:hover {
   box-shadow: 0 0.5rem 1rem rgba(223, 213, 213, 0.15) !important;
 }
 
-.dark-mode a h4 {
-  color: #ebf4f1;
-}
-
-.sepia-mode a h4 {
-  color: #433422;
-}
-
-.dark-mode a h4:hover {
-    color: rgba(235, 244, 241, .7);
-}
-
-.sepia-mode a h4:hover {
-  color: rgba(67, 52, 34,.7);
-}
-
 .sepia-mode .card {
   background-color: $sepia-mode;
   color: #433422;
 }
-
-
 
 // .img-preloader {
 //   border: 5px solid transparent;

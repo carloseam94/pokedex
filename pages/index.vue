@@ -13,9 +13,9 @@
     <div class="container">
       <div class="row my-4 pb-4">
         <div class="col text-center">
-          <button @click="previous($event)" :disabled="!pokemons.previous" class="btn btn-dark btn-page">
+          <a href="#" @click="previous($event)" :disabled="!pokemons.previous" class="btn btn-dark btn-page">
             <i class="fa fa-arrow-left me-2"></i>Prev
-          </button>
+          </a>
           <input
             type="number"
             step="1"
@@ -27,11 +27,11 @@
             class="ms-2 form-control d-inline-block btn-page"
             style="width: 70px"
           />
-          <button class="me-2 btn btn-dark btn-page" @click="goToPage(page)">Go</button>
-          <button @click="next($event)" :disabled="!pokemons.next" class="btn btn-dark btn-page">
+          <a href="#" class="me-2 btn btn-dark btn-page" @click="goToPage(page)">Go</a>
+          <a href="#" @click="next($event)" :disabled="!pokemons.next" class="btn btn-dark btn-page">
             Next
             <i class="fa fa-arrow-right ms-2"></i>
-          </button>
+          </a>
         </div>
       </div>
     </div>
