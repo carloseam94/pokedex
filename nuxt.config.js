@@ -137,6 +137,9 @@ export default {
     },
     icon: {
       fileName: "app-icon.png"
+    },
+    workbox: {
+      enabled: true
     }
   },
 
