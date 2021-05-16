@@ -139,6 +139,7 @@ export default {
       fileName: "app-icon.png"
     },
     workbox: {
+      cachingExtensions: '~/plugins/workbox-sync.js',
       enabled: true
     }
   },
