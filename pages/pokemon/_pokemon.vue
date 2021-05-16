@@ -3,39 +3,74 @@
     <div class="row">
       <div class="col text-center">
         <h1 class="text-capitalize">{{ pokemon.name }}</h1>
+        <h2># {{ pokemon.order }}</h2>
       </div>
     </div>
     <div class="row">
       <div class="col text-center">
-        <img :src="pokemon.sprites.other['official-artwork'].front_default" alt="official_artwork">
+        <img :src="pokemon.sprites.other['official-artwork'].front_default" alt="official_artwork" />
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <img :src="pokemon.sprites.back_default" alt="back_default">
+        <h2>Sprites</h2>
       </div>
-      <div class="col">
-        <img :src="pokemon.sprites.back_female" alt="back_female">
-      </div>
-      <div class="col">
-        <img :src="pokemon.sprites.back_shiny" alt="back_shiny">
-      </div>
-      <div class="col">
-        <img :src="pokemon.sprites.back_shiny_female" alt="back_shiny_female">
+    </div>
+
+    <div class="row">
+      <div class="col text-center">
+        <h5>Default</h5>
       </div>
     </div>
     <div class="row">
-      <div class="col">
-        <img :src="pokemon.sprites.front_default" alt="front_default">
+      <div class="col text-center">
+        <img :src="pokemon.sprites.back_default" width="200" alt="back_default" />
       </div>
-      <div class="col">
-        <img :src="pokemon.sprites.front_female" alt="front_female">
+      <div class="col text-center">
+        <img :src="pokemon.sprites.front_default" width="200" alt="front_default" />
       </div>
-      <div class="col">
-        <img :src="pokemon.sprites.front_shiny" alt="front_shiny">
+    </div>
+
+    <div class="row">
+      <div class="col text-center">
+        <h5>Default Shiny</h5>
       </div>
-      <div class="col">
-        <img :src="pokemon.sprites.front_shiny_female" alt="front_shiny_female">
+    </div>
+    <div class="row">
+      <div class="col text-center">
+        <img :src="pokemon.sprites.back_shiny" width="200" alt="back_shiny" />
+      </div>
+      <div class="col text-center">
+        <img :src="pokemon.sprites.front_shiny" width="200" alt="front_shiny" />
+      </div>
+    </div>
+
+    <div v-if="pokemon.sprites.back_female">
+      <div class="row">
+        <div class="col text-center">
+          <h5>Female</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <img :src="pokemon.sprites.back_female" width="200" alt="back_female" />
+        </div>
+        <div class="col text-center">
+          <img :src="pokemon.sprites.front_female" width="200" alt="front_female" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <h5>Female Shiny</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <img :src="pokemon.sprites.back_shiny_female" width="200" alt="back_shiny_female" />
+        </div>
+        <div class="col text-center">
+          <img :src="pokemon.sprites.front_shiny_female" width="200" alt="front_shiny_female" />
+        </div>
       </div>
     </div>
   </div>
@@ -48,7 +83,7 @@ export default {
     return {
       data: "",
       pokemon: {
-        sprites: { 
+        sprites: {
           front_default: "",
           front_female: "",
           front_shiny: "",
@@ -58,7 +93,7 @@ export default {
           back_shiny: "",
           back_shiny_female: "",
           other: {
-            'official-artwork': {
+            "official-artwork": {
               front_default: ""
             }
           }
@@ -76,10 +111,10 @@ export default {
       .get("https://pokeapi.co/api/v2/pokemon/" + this.$route.params.pokemon)
       .then(response => {
         this.pokemon = response.data;
-        console.log(this.pokemon)
+        console.log(this.pokemon);
       })
       .catch(error => {});
-  },
+  }
 };
 </script>
 
