@@ -31,6 +31,9 @@
             {{ pokemonData.types[1].type.name }}
           </h5>
         </span>
+        <span style="float: right;" class="pt-1">
+          <h5 class="d-inline-block"># {{ pokemonData.id }}</h5>
+        </span>
       </div>
     </div>
   </div>

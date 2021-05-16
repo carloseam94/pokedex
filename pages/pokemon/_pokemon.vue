@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col text-center">
         <h1 class="text-capitalize">{{ pokemon.name }}</h1>
-        <h2># {{ pokemon.order }}</h2>
+        <h2># {{ pokemon.id }}</h2>
       </div>
     </div>
     <div class="row">
       <div class="col text-center">
-        <img :src="pokemon.sprites.other['official-artwork'].front_default" alt="official_artwork" />
+        <img :src="pokemon.sprites.other['official-artwork'].front_default" alt="official_artwork" class="w-100" style="max-width: 475px" />
       </div>
     </div>
     <div class="row">
