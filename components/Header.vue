@@ -3,9 +3,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand fs-3" href="/">PokedexNav</a>
-        <!-- <small class="ms-2 d-inline-block text-light"
-          >( project in process )</small
-        > -->
         <button
           class="navbar-toggler"
           type="button"
@@ -18,31 +15,25 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!-- <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-            </li>-->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <ColorModePicker />
+            </li>
           </ul>
-          <ColorModePicker />
 
-          <!-- <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-light" type="submit">Search</button>
-          </form> -->
+          <div class="d-flex">
+            <Dropdown
+              :options="search_options"
+              v-on:selected="validateSelection"
+              v-on:filter="getDropdownValues"
+              :disabled="false"
+              name="pokemon_search"
+              :maxItem="10"
+              placeholder="Pokemon"
+              class="mx-2"
+            ></Dropdown>
+            <a :href="'/pokemon/' + pokemon_selected" class="btn btn-sm btn-outline-light" @click="search"><i class="fa fa-search" style="padding-top: 6px;"></i></a>
+          </div>
         </div>
       </div>
     </nav>
@@ -50,13 +41,61 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+
+export default {
+  computed: {
+    search_options() {
+      var res = [];
+      var i = 1;
+      this.pokemons.forEach(p => {
+        res.push({ id: i++, name: p.name });
+      });
+      return res;
+    }
+  },
+  data() {
+    return {
+      pokemons: [],
+      pokemon_selected: ''
+    };
+  },
+  created() {
+    this.fetchData();
+  },
+  mounted() {
+    document.getElementsByTagName('input').forEach(x => {
+      x.setAttribute('autocomplete','off');
+    })
+  },
+  methods: {
+    fetchData() {
+      axios
+        .get("https://pokeapi.co/api/v2/pokemon?limit=1118")
+        .then(response => {
+          this.pokemons = response.data.results;
+        })
+        .catch(error => {});
+    },
+    validateSelection(selection) {
+      this.pokemon_selected = selection.name;
+
+    },
+    getDropdownValues() {
+
+    },
+    search($event) {
+      if(!this.pokemon_selected || this.pokemon_selected == '') {
+        $event.preventDefault();
+        return false;
+      }
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-
 header {
-    margin-bottom: 7rem;
+  margin-bottom: 7rem;
 }
-
 </style>

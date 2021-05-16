@@ -14,7 +14,7 @@
       <div class="row my-4 pb-4">
         <div class="col text-center">
           <button @click="previous($event)" :disabled="!pokemons.previous" class="btn btn-dark">
-            <i class="fa fa-arrow-left me-2"></i>Previous
+            <i class="fa fa-arrow-left me-2"></i>Prev
           </button>
           <input
             type="number"
