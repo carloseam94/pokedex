@@ -1,7 +1,8 @@
 <template>
   <div class="card mb-4" style="border-radius: 0.75rem">
     <a :href="'/pokemon/' + pokemon.name">
-        <img class="card-img-top" :src="pokemonData.sprites.other['official-artwork'].front_default" :alt="'sprite_' + pokemon.name" />
+        <img id="pokemon-img" class="card-img-top" :src="pokemonData.sprites.other['official-artwork'].front_default" :alt="'sprite_' + pokemon.name" />
+        <span id="img-preloader" class="img-preloader"></span>
       </a>
     <div class="card-body">
       <a :href="'/pokemon/' + pokemon.name">
@@ -61,6 +62,12 @@ export default {
   },
   created() {
     this.fetchData();
+  },
+  mounted() {
+    document.getElementById("pokemon-img").onload = function() {
+      document.getElementById("img-preloader").style.display = "none";
+      document.getElementById("pokemon-img").style.display = "unset";
+    };
   },
   methods: {
     fetchData() {
@@ -135,4 +142,25 @@ a h4:hover {
   background-color: $sepia-mode;
   color: #433422;
 }
+
+
+
+// .img-preloader {
+//   border: 5px solid transparent;
+//   border-radius: 50%;
+//   border-top: 5px solid #4e80e5;
+//   width: 30px;
+//   height: 30px;
+//   animation: spin 1s linear infinite;
+//   border-right: 5px solid #4e80e5;
+//   border-bottom: 5px solid #4e80e5;
+
+//   z-index: 1000;
+// }
+
+// @keyframes spin {
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
 </style>
