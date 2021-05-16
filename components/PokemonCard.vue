@@ -53,8 +53,8 @@ export default {
         },
         name: this.pokemon.name,
         types: [
-          { type: { name: "normal", url: "" } },
-          { type: { name: "normal", url: "" } },
+          { type: { name: "", url: "" } },
+          { type: { name: "", url: "" } },
         ],
       },
     };
