@@ -136,7 +136,7 @@ export default {
       theme_color: '#209CEE'
     },
     icon: {
-      fileName: "app-icon.jpeg"
+      fileName: "app-icon.png"
     }
   },
 

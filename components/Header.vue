@@ -98,4 +98,97 @@ export default {
 header {
   margin-bottom: 7rem;
 }
+
+.navbar-toggler {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ------------------- toggler ---------- */
+
+.navbar-toggler-icon:before,
+.navbar-toggler-icon:after {
+  position: absolute;
+  content: "";
+}
+
+.navbar-toggler-icon,
+.navbar-toggler-icon:before,
+.navbar-toggler-icon:after {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+}
+
+.navbar-toggler-icon:before {
+  margin-top: -8px;
+}
+
+.navbar-toggler-icon:after {
+  margin-top: 8px;
+}
+
+.navbar-toggler {
+  outline: none;
+  border: none;
+}
+
+.navbar-toggler span {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.navbar-toggler span:before {
+  -webkit-transition-property: margin, -webkit-transform;
+  transition-property: margin, transform;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-delay: 0.2s, 0s;
+  transition-delay: 0.2s, 0s;
+}
+
+.navbar-toggler span:after {
+  -webkit-transition-property: margin, -webkit-transform;
+  transition-property: margin, transform;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-delay: 0.2s, 0s;
+  transition-delay: 0.2s, 0s;
+}
+
+.navbar-toggler[aria-expanded="true"] span {
+  background-color: transparent;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  background-image: none;
+}
+
+.navbar-toggler[aria-expanded="true"] span:before {
+  margin-top: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition-delay: 0s, 0.2s;
+  transition-delay: 0s, 0.2s;
+}
+
+.navbar-toggler[aria-expanded="true"] span:after {
+  margin-top: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition-delay: 0s, 0.2s;
+  transition-delay: 0s, 0.2s;
+}
+
+/* -------------- end toggler ---------------- */
+
 </style>
