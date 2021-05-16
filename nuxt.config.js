@@ -5,7 +5,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'PokedexNav',
-    titleTemplate: 'PokedexNav | %s',
+    titleTemplate: 'PokedexNav',
     meta: [
       { charset: 'utf-8' },
       {
