@@ -4,13 +4,93 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "pokedex",
+    title: 'PokedexNav',
+    titleTemplate: 'PokedexNav | %s',
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { charset: 'utf-8' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Pokedex'
+      },
+
+      // Twitter
+      // Test on: https://cards-dev.twitter.com/validator
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@carloseam94' },
+      {
+        hid: 'twitter:url',
+        name: 'twitter:url',
+        content: 'https://pokedexnav.netlify.app/'
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'PokedexNav'
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content:
+          'Pokedex'
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://pokedexnav.netlify.app/app-icon.jpeg'
+      },
+
+      // Open Graph
+      // Test on: https://developers.facebook.com/tools/debug/
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Nuxt' },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://pokedexnav.netlify.app/'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'PokedexNav'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          'Pokedex'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://pokedexnav.netlify.app/app-icon.jpeg'
+      },
+      {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content: 'https://pokedexnav.netlify.app/app-icon.jpeg'
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'PokedexNav'
+      }
     ],
     link: [
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: `https://pokedexnav.netlify.app/`
+      },
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
@@ -18,6 +98,8 @@ export default {
       }
     ]
   },
+
+  loading: "~/components/Preloader.vue",
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [{ src: "~/assets/main.css" }],
@@ -54,8 +136,12 @@ export default {
       theme_color: '#209CEE'
     },
     icon: {
-      fileName: "app-icon.png"
+      fileName: "app-icon.jpeg"
     }
+  },
+
+  generate: {
+    fallback: true
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
