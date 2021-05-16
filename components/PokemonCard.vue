@@ -79,6 +79,10 @@ export default {
 $dark-mode: #163c5b;
 $sepia-mode: #f1e7d0;
 
+.card-img-top {
+  min-height: 294px;
+}
+
 .card:hover {
   transition: all 0.2s ease-in-out;
 }

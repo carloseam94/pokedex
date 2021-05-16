@@ -47,7 +47,14 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: "en"
+      lang: 'en',
+      name: "PokedexNav",
+      short_name: "PokedexNav",
+      description: "Pokedex",
+      theme_color: '#209CEE'
+    },
+    icon: {
+      fileName: "app-icon.png"
     }
   },
 
