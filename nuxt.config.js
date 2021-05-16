@@ -138,10 +138,10 @@ export default {
     icon: {
       fileName: "app-icon.png"
     },
-    workbox: {
-      cachingExtensions: '~/plugins/workbox-sync.js',
-      enabled: true
-    }
+    // workbox: {
+    //   cachingExtensions: '~/plugins/workbox-sync.js',
+    //   enabled: true
+    // }
   },
 
   generate: {
