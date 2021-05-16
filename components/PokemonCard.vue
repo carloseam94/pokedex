@@ -1,6 +1,6 @@
 <template>
   <div class="card mb-4" style="border-radius: 0.75rem">
-    <a :href="pokemon.name">
+    <a :href="'/pokemon/' + pokemon.name">
         <img id="pokemon-img" class="card-img-top" :src="pokemonData.sprites.other['official-artwork'].front_default" :alt="'sprite_' + pokemon.name" />
         <span id="img-preloader" class="img-preloader"></span>
       </a>
@@ -86,9 +86,9 @@ export default {
 $dark-mode: #163c5b;
 $sepia-mode: #f1e7d0;
 
-.card-img-top {
-  min-height: 294px;
-}
+// .card-img-top {
+//   min-height: 294px;
+// }
 
 .card:hover {
   transition: all 0.2s ease-in-out;
