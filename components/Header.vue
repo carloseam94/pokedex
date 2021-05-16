@@ -27,12 +27,11 @@
               v-on:selected="validateSelection"
               v-on:filter="getDropdownValues"
               :disabled="false"
-              name="pokemon_search"
               :maxItem="10"
               placeholder="Pokemon"
               class="mx-2"
             ></Dropdown>
-            <a :href="'/pokemon/' + pokemon_selected" class="btn btn-sm btn-outline-light" @click="search"><i class="fa fa-search" style="padding-top: 6px;"></i></a>
+            <a :href="'/pokemon/' + pokemon_selected" class="btn-search btn btn-sm btn-outline-light fs-5 pt-0" @click="search"><i class="fa fa-search"></i></a>
           </div>
         </div>
       </div>
@@ -108,6 +107,16 @@ header {
 .navbar-toggler:focus {
   outline: none !important;
   border: none !important;
+  box-shadow: none !important;
+}
+
+.btn-search:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-search {
+  outline: none !important;
   box-shadow: none !important;
 }
 

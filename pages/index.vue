@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row my-4 pb-4">
         <div class="col text-center">
-          <button @click="previous($event)" :disabled="!pokemons.previous" class="btn btn-dark">
+          <button @click="previous($event)" :disabled="!pokemons.previous" class="btn btn-dark btn-page">
             <i class="fa fa-arrow-left me-2"></i>Prev
           </button>
           <input
@@ -24,11 +24,11 @@
             v-model="page"
             @keydown="keydownInputPgae($event)"
             id="input_page"
-            class="ms-2 form-control d-inline-block"
+            class="ms-2 form-control d-inline-block btn-page"
             style="width: 70px"
           />
-          <button class="me-2 btn btn-dark" @click="goToPage(page)">Go</button>
-          <button @click="next($event)" :disabled="!pokemons.next" class="btn btn-dark">
+          <button class="me-2 btn btn-dark btn-page" @click="goToPage(page)">Go</button>
+          <button @click="next($event)" :disabled="!pokemons.next" class="btn btn-dark btn-page">
             Next
             <i class="fa fa-arrow-right ms-2"></i>
           </button>
@@ -106,5 +106,13 @@ export default {
 </script>
 
 <style>
+.btn-page:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
+.btn-page {
+  outline: none !important;
+  box-shadow: none !important;
+}
 </style>
