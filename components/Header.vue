@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand fs-3" href="/">PokedexNav</a>
+        <NuxtLink class="navbar-brand fs-3" to="/">PokedexNav</NuxtLink>
         <button
           class="navbar-toggler"
           type="button"
@@ -31,7 +31,7 @@
               placeholder="Pokemon"
               class="mx-2"
             ></Dropdown>
-            <a :href="'/pokemon/' + pokemon_selected" class="btn-search btn btn-sm btn-outline-light fs-5 pt-0" @click="search"><i class="fa fa-search"></i></a>
+            <NuxtLink :to="'/pokemon/' + pokemon_selected" class="btn-search btn btn-sm btn-outline-light fs-5 pt-0" @click="search"><i class="fa fa-search"></i></NuxtLink>
           </div>
         </div>
       </div>

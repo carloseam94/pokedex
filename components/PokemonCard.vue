@@ -1,13 +1,13 @@
 <template>
   <div class="card mb-4" style="border-radius: 0.75rem">
-    <a :href="'/pokemon/' + pokemon.name">
+    <NuxtLink :to="'/pokemon/' + pokemon.name">
         <img id="pokemon-img" class="card-img-top" :src="pokemonData.sprites.other['official-artwork'].front_default" :alt="'sprite_' + pokemon.name" />
         <span id="img-preloader" class="img-preloader"></span>
-      </a>
+      </NuxtLink>
     <div class="card-body">
-      <a :href="'/pokemon/' + pokemon.name">
+      <NuxtLink :to="'/pokemon/' + pokemon.name">
       <h4 class="card-title text-capitalize d-inline-block">{{ pokemon.name}}</h4>
-      </a>
+      </NuxtLink>
       <div>
         <span>
           <img

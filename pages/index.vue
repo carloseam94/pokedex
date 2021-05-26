@@ -13,9 +13,9 @@
     <div class="container">
       <div class="row my-4 pb-4">
         <div class="col text-center">
-          <a href="#" @click="previous($event)" :disabled="!pokemons.previous" class="btn btn-dark btn-page">
+          <NuxtLink to="#" @click="previous($event)" :disabled="!pokemons.previous" class="btn btn-dark btn-page">
             <i class="fa fa-arrow-left me-2"></i>Prev
-          </a>
+          </NuxtLink>
           <input
             type="number"
             step="1"
@@ -27,11 +27,11 @@
             class="ms-2 form-control d-inline-block btn-page"
             style="width: 70px"
           />
-          <a href="#" class="me-2 btn btn-dark btn-page" @click="goToPage(page)">Go</a>
-          <a href="#" @click="next($event)" :disabled="!pokemons.next" class="btn btn-dark btn-page">
+          <NuxtLink to="#" class="me-2 btn btn-dark btn-page" @click="goToPage(page)">Go</NuxtLink>
+          <NuxtLink to="#" @click="next($event)" :disabled="!pokemons.next" class="btn btn-dark btn-page">
             Next
             <i class="fa fa-arrow-right ms-2"></i>
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </div>

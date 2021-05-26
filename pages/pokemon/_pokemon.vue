@@ -2,7 +2,7 @@
   <div class="container my-4" style="min-height: 100vh">
     <div class="row">
       <div class="col">
-        <a href="/"><h4 class="d-inline-block"><span class="fs-6"><i class="fa fa-arrow-left me-2"></i></span>Back</h4></a>
+        <NuxtLink to="/"><h4 class="d-inline-block"><span class="fs-6"><i class="fa fa-arrow-left me-2"></i></span>Back</h4></NuxtLink>
       </div>
     </div>
     <div class="row">
