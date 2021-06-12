@@ -22,16 +22,23 @@
           </ul>
 
           <div class="d-flex">
-            <Dropdown
-              :options="search_options"
-              v-on:selected="validateSelection"
-              v-on:filter="getDropdownValues"
-              :disabled="false"
-              :maxItem="10"
-              placeholder="Pokemon"
-              class="mx-2"
-            ></Dropdown>
-            <NuxtLink :to="'/pokemon/' + pokemon_selected" class="btn-search btn btn-sm btn-outline-light fs-5 pt-0" @click="search"><i class="fa fa-search"></i></NuxtLink>
+            <client-only>
+              <Dropdown
+                :options="search_options"
+                v-on:selected="validateSelection"
+                v-on:filter="getDropdownValues"
+                :disabled="false"
+                :maxItem="10"
+                placeholder="Pokemon"
+                class="mx-2"
+              ></Dropdown>
+            </client-only>
+            <NuxtLink
+              :to="'/pokemon/' + pokemon_selected"
+              class="btn-search btn btn-sm btn-outline-light fs-5 pt-0"
+              @click="search"
+              ><i class="fa fa-search"></i
+            ></NuxtLink>
           </div>
         </div>
       </div>
@@ -47,49 +54,46 @@ export default {
     search_options() {
       var res = [];
       var i = 1;
-      this.pokemons.forEach(p => {
+      this.pokemons.forEach((p) => {
         res.push({ id: i++, name: p.name });
       });
       return res;
-    }
+    },
   },
   data() {
     return {
       pokemons: [],
-      pokemon_selected: ''
+      pokemon_selected: "",
     };
   },
   created() {
     this.fetchData();
   },
   mounted() {
-    document.getElementsByTagName('input').forEach(x => {
-      x.setAttribute('autocomplete','off');
-    })
+    document.getElementsByTagName("input").forEach((x) => {
+      x.setAttribute("autocomplete", "off");
+    });
   },
   methods: {
     fetchData() {
       axios
         .get("https://pokeapi.co/api/v2/pokemon?limit=1118")
-        .then(response => {
+        .then((response) => {
           this.pokemons = response.data.results;
         })
-        .catch(error => {});
+        .catch((error) => {});
     },
     validateSelection(selection) {
       this.pokemon_selected = selection.name;
-
     },
-    getDropdownValues() {
-
-    },
+    getDropdownValues() {},
     search($event) {
-      if(!this.pokemon_selected || this.pokemon_selected == '') {
+      if (!this.pokemon_selected || this.pokemon_selected == "") {
         $event.preventDefault();
         return false;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -199,5 +203,4 @@ header {
 }
 
 /* -------------- end toggler ---------------- */
-
 </style>
