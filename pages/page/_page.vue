@@ -120,7 +120,6 @@ export default {
     },
     keydownInputPgae($event) {
       if ($event.keyCode == 13) {
-        this.$route.params.page = this.page;
         this.$router.replace({params: {page: this.page}});
         this.goToPage(this.page);
       }
