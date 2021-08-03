@@ -131,7 +131,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .btn-page:focus {
   outline: none !important;
   box-shadow: none !important;
