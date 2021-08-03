@@ -9,7 +9,7 @@
       <h4 class="card-title text-capitalize d-inline-block">{{ pokemon.name}}</h4>
       </NuxtLink>
       <div>
-        <span>
+        <span v-if="pokemonData.types[0].type.name !== ''">
           <img
             :src="'/images/types/' + pokemonData.types[0].type.name + '.png'"
             width="32"
@@ -20,7 +20,7 @@
             {{ pokemonData.types[0].type.name }}
           </h5>
         </span>
-        <span v-if="pokemonData.types.length > 1" class="ms-2">
+        <span v-if="pokemonData.types.length > 1 && pokemonData.types[1].type.name !== ''" class="ms-2">
           <img
             :src="'/images/types/' + pokemonData.types[1].type.name + '.png'"
             width="32"
