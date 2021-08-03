@@ -11,7 +11,7 @@
       <div>
         <span>
           <img
-            :src="'images/types/' + pokemonData.types[0].type.name + '.png'"
+            :src="'/images/types/' + pokemonData.types[0].type.name + '.png'"
             width="32"
             alt="type 1"
             class="rounded-circle"
@@ -22,7 +22,7 @@
         </span>
         <span v-if="pokemonData.types.length > 1" class="ms-2">
           <img
-            :src="'images/types/' + pokemonData.types[1].type.name + '.png'"
+            :src="'/images/types/' + pokemonData.types[1].type.name + '.png'"
             width="32"
             alt="type 2"
             class="rounded-circle"
