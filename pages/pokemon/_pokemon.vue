@@ -116,7 +116,7 @@ export default {
       .get("https://pokeapi.co/api/v2/pokemon/" + this.$route.params.pokemon)
       .then(response => {
         this.pokemon = response.data;
-        console.log(this.pokemon);
+        // console.log(this.pokemon);
       })
       .catch(error => {});
   }
